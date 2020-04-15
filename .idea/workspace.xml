@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="cb00957f-fb64-4f62-86dd-c0de54a329aa" name="Default Changelist" comment="Set up initial" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="jsPsychTutorial" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="package.json" />
+        <option value="JavaScript File" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="D:\Winson\Github\jsPsychTutorial\.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="1ZoRLk5lyDGy4O4yWZrqElFaCwi" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/jsPsychTutorialProgress-master" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Winson\Github\jsPsychTutorial" />
+      <recent name="D:\Winson\Github\jsPsychTutorial\public" />
+      <recent name="D:\Winson\Github\jsPsychTutorial\scripts" />
+      <recent name="D:\Winson\Github\jsPsychTutorial\public\src" />
+      <recent name="D:\Winson\Github\jsPsychTutorial\public\views" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\winso\Desktop\jsPsychTutorial\img" />
+      <recent name="C:\Users\winso\Desktop\jsPsychTutorial" />
+      <recent name="C:\Users\winso\Desktop\jsPsychTutorial\js" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JavaScript Debug.finish.html">
+    <configuration name="finish.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/jsPsychTutorial/public/views/finish.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/jsPsychTutorial/public/views/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="jspsych-html-keyboard-response.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/jsPsychTutorial/js/examples/jspsych-html-keyboard-response.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.finish.html" />
+        <item itemvalue="JavaScript Debug.index.html" />
+        <item itemvalue="JavaScript Debug.jspsych-html-keyboard-response.html" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cb00957f-fb64-4f62-86dd-c0de54a329aa" name="Default Changelist" comment="" />
+      <created>1585503406023</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1585503406023</updated>
+      <workItem from="1585503407713" duration="4368000" />
+      <workItem from="1585527061973" duration="1436000" />
+      <workItem from="1585587823548" duration="3836000" />
+      <workItem from="1585600342296" duration="12000" />
+      <workItem from="1585681109720" duration="2289000" />
+      <workItem from="1585752736405" duration="32000" />
+      <workItem from="1585761901293" duration="2100000" />
+      <workItem from="1585851877251" duration="3481000" />
+      <workItem from="1586190967106" duration="2072000" />
+      <workItem from="1586193756549" duration="525000" />
+      <workItem from="1586363859666" duration="10574000" />
+      <workItem from="1586450320089" duration="2899000" />
+      <workItem from="1586458638964" duration="8373000" />
+      <workItem from="1586552567346" duration="223000" />
+      <workItem from="1586564031178" duration="10000" />
+      <workItem from="1586801414759" duration="5942000" />
+      <workItem from="1586887546026" duration="7486000" />
+      <workItem from="1586915020398" duration="279000" />
+      <workItem from="1586972881126" duration="6037000" />
+      <workItem from="1586978984275" duration="2982000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Set up initial" />
+    <option name="LAST_COMMIT_MESSAGE" value="Set up initial" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2610" y="272" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1586978263999">
+      <screen x="1920" y="0" width="1920" height="1050" />
+    </state>
+    <state x="2610" y="272" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.834/1920.0.1920.1050@1920.0.1920.1050" timestamp="1586978263999" />
+    <state x="2503" y="32" key="CommitChangelistDialog2" timestamp="1586369441044">
+      <screen x="1920" y="0" width="1920" height="1050" />
+    </state>
+    <state x="2503" y="32" key="CommitChangelistDialog2/0.0.1536.834/1920.0.1920.1050@1920.0.1920.1050" timestamp="1586369441044" />
+    <state x="2659" y="267" key="FileChooserDialogImpl" timestamp="1586975495450">
+      <screen x="1920" y="0" width="1920" height="1050" />
+    </state>
+    <state x="2659" y="267" key="FileChooserDialogImpl/0.0.1536.834/1920.0.1920.1050@1920.0.1920.1050" timestamp="1586975495450" />
+    <state width="1899" height="320" key="GridCell.Tab.0.bottom" timestamp="1585527496252">
+      <screen x="1920" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1899" height="320" key="GridCell.Tab.0.bottom/0.0.1536.834/1920.0.1920.1050@1920.0.1920.1050" timestamp="1585527496252" />
+    <state width="1899" height="320" key="GridCell.Tab.0.center" timestamp="1585527496252">
+      <screen x="1920" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1899" height="320" key="GridCell.Tab.0.center/0.0.1536.834/1920.0.1920.1050@1920.0.1920.1050" timestamp="1585527496252" />
+    <state width="1899" height="320" key="GridCell.Tab.0.left" timestamp="1585527496251">
+      <screen x="1920" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1899" height="320" key="GridCell.Tab.0.left/0.0.1536.834/1920.0.1920.1050@1920.0.1920.1050" timestamp="1585527496251" />
+    <state width="1899" height="320" key="GridCell.Tab.0.right" timestamp="1585527496252">
+      <screen x="1920" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1899" height="320" key="GridCell.Tab.0.right/0.0.1536.834/1920.0.1920.1050@1920.0.1920.1050" timestamp="1585527496252" />
+    <state width="1899" height="320" key="GridCell.Tab.1.bottom" timestamp="1585527496252">
+      <screen x="1920" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1899" height="320" key="GridCell.Tab.1.bottom/0.0.1536.834/1920.0.1920.1050@1920.0.1920.1050" timestamp="1585527496252" />
+    <state width="1899" height="320" key="GridCell.Tab.1.center" timestamp="1585527496252">
+      <screen x="1920" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1899" height="320" key="GridCell.Tab.1.center/0.0.1536.834/1920.0.1920.1050@1920.0.1920.1050" timestamp="1585527496252" />
+    <state width="1899" height="320" key="GridCell.Tab.1.left" timestamp="1585527496252">
+      <screen x="1920" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1899" height="320" key="GridCell.Tab.1.left/0.0.1536.834/1920.0.1920.1050@1920.0.1920.1050" timestamp="1585527496252" />
+    <state width="1899" height="320" key="GridCell.Tab.1.right" timestamp="1585527496252">
+      <screen x="1920" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1899" height="320" key="GridCell.Tab.1.right/0.0.1536.834/1920.0.1920.1050@1920.0.1920.1050" timestamp="1585527496252" />
+    <state width="1899" height="320" key="GridCell.Tab.2.bottom" timestamp="1585527496252">
+      <screen x="1920" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1899" height="320" key="GridCell.Tab.2.bottom/0.0.1536.834/1920.0.1920.1050@1920.0.1920.1050" timestamp="1585527496252" />
+    <state width="1899" height="320" key="GridCell.Tab.2.center" timestamp="1585527496252">
+      <screen x="1920" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1899" height="320" key="GridCell.Tab.2.center/0.0.1536.834/1920.0.1920.1050@1920.0.1920.1050" timestamp="1585527496252" />
+    <state width="1899" height="320" key="GridCell.Tab.2.left" timestamp="1585527496252">
+      <screen x="1920" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1899" height="320" key="GridCell.Tab.2.left/0.0.1536.834/1920.0.1920.1050@1920.0.1920.1050" timestamp="1585527496252" />
+    <state width="1899" height="320" key="GridCell.Tab.2.right" timestamp="1585527496252">
+      <screen x="1920" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1899" height="320" key="GridCell.Tab.2.right/0.0.1536.834/1920.0.1920.1050@1920.0.1920.1050" timestamp="1585527496252" />
+    <state x="2536" y="243" key="run.anything.popup" timestamp="1586368591076">
+      <screen x="1920" y="0" width="1920" height="1050" />
+    </state>
+    <state x="2536" y="243" key="run.anything.popup/0.0.1536.834/1920.0.1920.1050@1920.0.1920.1050" timestamp="1586368591076" />
+    <state x="498" y="180" width="538" height="539" key="search.everywhere.popup" timestamp="1586982045761">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="498" y="180" width="538" height="539" key="search.everywhere.popup/0.0.1536.834/1920.0.1920.1050@0.0.1536.834" timestamp="1586982045761" />
+    <state x="2543" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1536.834/1920.0.1920.1050@1920.0.1920.1050" timestamp="1586979797026" />
+  </component>
+</project>

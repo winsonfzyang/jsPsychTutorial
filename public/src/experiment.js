@@ -164,9 +164,9 @@ var debrief = {
 timeline = [];
 timeline.push(welcome_block);
 timeline.push(instruction_block);
-timeline.push(pract_procedure);
+// timeline.push(pract_procedure);
 timeline.push(exp_instructions);
-timeline.push(exp_procedure);
+// timeline.push(exp_procedure);
 timeline.push(debrief);
 
 function startExp() {
@@ -184,22 +184,16 @@ function startExp() {
                 data: JSON.stringify(jsPsych.data.get().values()),
                 contentType: "application/json"
             }).done(function() {
-                console.log("Go to finish page");
+                window.location.href = "finish";
             }).fail(function() {
                 alert("Problem occurred while writing data to Dropbox. " +
                     "Data will be saved to your computer. " +
-                    "Please contact the experimenter!");
+                    "Please contact the experimenter regarding this issue!");
                 var csv = jsPsych.data.get().csv();
                 var filename = jsPsych.data.get().values()[0].part_ID + "_" + DATE + ".csv";
                 downloadCSV(csv, filename);
+                window.location.href = "finish";
             });
-
-            // Create finish screen
-            var myclosescreen = document.createElement("div");
-            myclosescreen.innerHTML = "<p>Data has been saved.</p> " +
-                "<p>You can now close this screen</p>";
-            myclosescreen.className = "debrief";
-            document.body.appendChild(myclosescreen);
         }
     })
 }

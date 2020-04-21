@@ -21,11 +21,15 @@ app.engine("html", require("ejs").renderFile);
 app.set("view engine", "html");
 
 // --- ROUTING
-app.get("/", function (reqest, respone) {
-    respone.render("index.html")
+app.get("/", function (request, response) {
+    response.render("index.html")
 });
 
-app.post("/experiment-data", function(request, response) {
+app.get("/finish", function(request, response) {
+    response.render("finish.html");
+});
+
+app.post('/experiment-data', function(request, response) {
     // convert json to csv
     DATA_CSV = json2csv(request.body);
 
@@ -36,6 +40,7 @@ app.post("/experiment-data", function(request, response) {
     ID_DATE = ID_DATE.replace(/"/g, "");
     filename = ID_DATE + ".csv";
     savedropbox(DATA_CSV, filename);
+    response.end();
     // console.log(DATA_CSV)
 });
 

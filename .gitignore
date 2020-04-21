@@ -1,2 +1,6 @@
 .env
+.Rproj.user
+.Rhistory
+.idea
 node_modules
+docs

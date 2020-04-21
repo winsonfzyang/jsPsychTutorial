@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Experiment</title>
+    <script src="../../js/jspsych.js"></script>
+    <script src="../../js/jquery.min.js"></script>
+    <script src="../../js/plugins/jspsych-html-keyboard-response.js"></script>
+
+    <link href="../css/jspsych.css" rel="stylesheet" type="text/css">
+    <link href="../css/styles.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+</body>
+<script>
+    // Create finish screen
+    var end_block = {
+        data: {
+            screen_id: "end_exp"
+        },
+        type: "html-keyboard-response",
+        stimulus: "Your data has been saved. <p>You can now close this screen</p>"
+    };
+    timeline = [];
+    timeline.push(end_block);
+
+    jsPsych.init({
+        timeline: timeline
+        })
+
+</script>
+</html>

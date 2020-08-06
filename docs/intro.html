@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 1 Basic Javascript | jsPsych Tutorial</title>
+  <meta name="description" content="This is a tutorial on creating web experiments using the jsPsych library for JavaScript." />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 1 Basic Javascript | jsPsych Tutorial" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a tutorial on creating web experiments using the jsPsych library for JavaScript." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 1 Basic Javascript | jsPsych Tutorial" />
+  
+  <meta name="twitter:description" content="This is a tutorial on creating web experiments using the jsPsych library for JavaScript." />
+  
+
+<meta name="author" content="Winson Yang" />
+
+
+<meta name="date" content="2020-08-06" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="the-jspsych-plugins.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">jsPsych Tutorial</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About this tutorial</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-jspsych"><i class="fa fa-check"></i>About jsPsych</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#structure-of-this-book"><i class="fa fa-check"></i>Structure of this book</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Basic Javascript</a><ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#what-is-javascript"><i class="fa fa-check"></i><b>1.1</b> What is JavaScript</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="intro.html"><a href="intro.html#text-editor-and-integrated-development-environment-ide"><i class="fa fa-check"></i><b>1.1.1</b> Text editor and integrated development environment (IDE)</a></li>
+<li class="chapter" data-level="1.1.2" data-path="intro.html"><a href="intro.html#the-html-skeleton"><i class="fa fa-check"></i><b>1.1.2</b> The HTML skeleton</a></li>
+<li class="chapter" data-level="1.1.3" data-path="intro.html"><a href="intro.html#the-console"><i class="fa fa-check"></i><b>1.1.3</b> The console</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#var-and-const"><i class="fa fa-check"></i><b>1.2</b> var, and const</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="intro.html"><a href="intro.html#var"><i class="fa fa-check"></i><b>1.2.1</b> var</a></li>
+<li class="chapter" data-level="1.2.2" data-path="intro.html"><a href="intro.html#const"><i class="fa fa-check"></i><b>1.2.2</b> const</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#comments"><i class="fa fa-check"></i><b>1.3</b> Comments</a></li>
+<li class="chapter" data-level="1.4" data-path="intro.html"><a href="intro.html#arrays"><i class="fa fa-check"></i><b>1.4</b> Arrays</a></li>
+<li class="chapter" data-level="1.5" data-path="intro.html"><a href="intro.html#objects"><i class="fa fa-check"></i><b>1.5</b> Objects</a></li>
+<li class="chapter" data-level="1.6" data-path="intro.html"><a href="intro.html#functions"><i class="fa fa-check"></i><b>1.6</b> Functions</a></li>
+<li class="chapter" data-level="1.7" data-path="intro.html"><a href="intro.html#booleans-and-comparisons"><i class="fa fa-check"></i><b>1.7</b> Booleans and comparisons</a></li>
+<li class="chapter" data-level="1.8" data-path="intro.html"><a href="intro.html#conditional-statements"><i class="fa fa-check"></i><b>1.8</b> Conditional statements</a><ul>
+<li class="chapter" data-level="1.8.1" data-path="intro.html"><a href="intro.html#if-else-else-if"><i class="fa fa-check"></i><b>1.8.1</b> If, else, else if</a></li>
+<li class="chapter" data-level="1.8.2" data-path="intro.html"><a href="intro.html#switch"><i class="fa fa-check"></i><b>1.8.2</b> Switch</a></li>
+</ul></li>
+<li class="chapter" data-level="1.9" data-path="intro.html"><a href="intro.html#conclusion"><i class="fa fa-check"></i><b>1.9</b> Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="the-jspsych-plugins.html"><a href="the-jspsych-plugins.html"><i class="fa fa-check"></i><b>2</b> The jsPsych plugins</a></li>
+<li class="chapter" data-level="3" data-path="the-welcome-screen.html"><a href="the-welcome-screen.html"><i class="fa fa-check"></i><b>3</b> The welcome screen</a></li>
+<li class="chapter" data-level="4" data-path="instructions.html"><a href="instructions.html"><i class="fa fa-check"></i><b>4</b> Instructions</a></li>
+<li class="chapter" data-level="5" data-path="experimental-trials.html"><a href="experimental-trials.html"><i class="fa fa-check"></i><b>5</b> Experimental trials</a></li>
+<li class="chapter" data-level="6" data-path="experiment-debrief.html"><a href="experiment-debrief.html"><i class="fa fa-check"></i><b>6</b> Experiment debrief</a></li>
+<li class="chapter" data-level="7" data-path="creating-your-experimental-trials.html"><a href="creating-your-experimental-trials.html"><i class="fa fa-check"></i><b>7</b> Creating your experimental trials</a></li>
+<li class="chapter" data-level="8" data-path="recording-browser-interaction.html"><a href="recording-browser-interaction.html"><i class="fa fa-check"></i><b>8</b> Recording browser interaction</a></li>
+<li class="chapter" data-level="9" data-path="saving-data-locally.html"><a href="saving-data-locally.html"><i class="fa fa-check"></i><b>9</b> Saving data locally</a></li>
+<li class="chapter" data-level="10" data-path="turning-your-experiment-into-a-node-js-application.html"><a href="turning-your-experiment-into-a-node-js-application.html"><i class="fa fa-check"></i><b>10</b> Turning your experiment into a Node.js application</a></li>
+<li class="chapter" data-level="11" data-path="save-your-data-into-an-online-data-storage-space-or-database.html"><a href="save-your-data-into-an-online-data-storage-space-or-database.html"><i class="fa fa-check"></i><b>11</b> Save your data into an online data storage space or database</a></li>
+<li class="chapter" data-level="12" data-path="uploading-your-experiment-on-github-and-deploying-on-heroku.html"><a href="uploading-your-experiment-on-github-and-deploying-on-heroku.html"><i class="fa fa-check"></i><b>12</b> Uploading your experiment on GitHub and deploying on Heroku</a></li>
+<li class="chapter" data-level="13" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>13</b> References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">jsPsych Tutorial</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="intro" class="section level1">
+<h1><span class="header-section-number">Chapter 1</span> Basic Javascript</h1>
+<center>
+<img src="img/html_js_css.jpg" width="450" />
+</center>
+<p>JavaScript, HTML, and CSS work together to create an interactive and beautiful web pages.</p>
+<ul>
+<li><strong>HTML</strong> provides the basic structure of sites, which is enhanced and modified by other technologies like CSS and JavaScript.</li>
+<li><strong>JavaScript</strong> is used to control the behavior of different elements.</li>
+<li><strong>CSS</strong> is used to control presentation, formatting, and layout.</li>
+</ul>
+<div id="what-is-javascript" class="section level2">
+<h2><span class="header-section-number">1.1</span> What is JavaScript</h2>
+<p>JavaScript (JS/js) is a programming language that adds interactivity to your website (for example games, responses when buttons are pressed or data is entered in forms, dynamic styling, and animation). Hence, JavaScript improves the user experience of the web page by converting it from a static page into an interactive one. JavaScript has also been used beyond the web development to create games, and web and mobile applications.</p>
+<div id="text-editor-and-integrated-development-environment-ide" class="section level3">
+<h3><span class="header-section-number">1.1.1</span> Text editor and integrated development environment (IDE)</h3>
+<p>To create your HTML/js applications, you will have to use a text editor like <a href="https://atom.io/">Atom</a>, <a href="https://code.visualstudio.com/">VS Code</a>, <a href="http://brackets.io/">Brackets</a> or <a href="https://www.sublimetext.com/">Sublime Text</a> to write and develop your code. Another option is to use an IDE such as <a href="https://www.jetbrains.com/webstorm/">JetBrains WebStorm</a>. You can pick any one of these and learn the features these text editors or IDEs offer.</p>
+</div>
+<div id="the-html-skeleton" class="section level3">
+<h3><span class="header-section-number">1.1.2</span> The HTML skeleton</h3>
+<p>There’s some basic code that (nearly) all HTML documents have in common. Here’s a typical bare-bones HTML document.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb1-1"><a href="intro.html#cb1-1"></a><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></span>
+<span id="cb1-2"><a href="intro.html#cb1-2"></a><span class="kw">&lt;html</span><span class="ot"> lang=</span><span class="st">&quot;en&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb1-3"><a href="intro.html#cb1-3"></a></span>
+<span id="cb1-4"><a href="intro.html#cb1-4"></a><span class="kw">&lt;head&gt;</span></span>
+<span id="cb1-5"><a href="intro.html#cb1-5"></a>    <span class="kw">&lt;meta</span><span class="ot"> charset=</span><span class="st">&quot;UTF-8&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb1-6"><a href="intro.html#cb1-6"></a>    <span class="kw">&lt;title&gt;</span>Your Title goes here!<span class="kw">&lt;/title&gt;</span></span>
+<span id="cb1-7"><a href="intro.html#cb1-7"></a><span class="kw">&lt;/head&gt;</span></span>
+<span id="cb1-8"><a href="intro.html#cb1-8"></a></span>
+<span id="cb1-9"><a href="intro.html#cb1-9"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb1-10"><a href="intro.html#cb1-10"></a></span>
+<span id="cb1-11"><a href="intro.html#cb1-11"></a><span class="kw">&lt;/body&gt;</span></span>
+<span id="cb1-12"><a href="intro.html#cb1-12"></a></span>
+<span id="cb1-13"><a href="intro.html#cb1-13"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
+<p>We will write our script in the <code>&lt;body&gt;&lt;/body&gt;</code> section. Hence we have to let HTML know that we are writing JavaScript:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb2-1"><a href="intro.html#cb2-1"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb2-2"><a href="intro.html#cb2-2"></a>    <span class="kw">&lt;script&gt;</span></span>
+<span id="cb2-3"><a href="intro.html#cb2-3"></a>        <span class="op">&lt;!--</span> Our JavaScript goes <span class="kw">in</span> here <span class="op">--&gt;</span></span>
+<span id="cb2-4"><a href="intro.html#cb2-4"></a>    <span class="kw">&lt;/script&gt;</span></span>
+<span id="cb2-5"><a href="intro.html#cb2-5"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
+<p>In this code, I’ve cut off the head and html sections to make this chapter shorter. From this point foward, we will only be concerned with the code inside <code>&lt;script&gt;&lt;/script&gt;</code>.</p>
+</div>
+<div id="the-console" class="section level3">
+<h3><span class="header-section-number">1.1.3</span> The console</h3>
+<p>The console in the browser is where you will see messages, errors, and logs of your code. Normally, it will detail what went wrong with your code if you did not get what you expected in the browser.</p>
+<center>
+<img src="img/console.jpg" width="450" />
+</center>
+<p>The <code>console.log()</code> is a function that writes a message to log on the debugging console. In a browser you will not see anything on the screen. It logs a message to a debugging console. It is normally used when need to test parts of your code.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb3-1"><a href="intro.html#cb3-1"></a><span class="kw">&lt;script&gt;</span></span>
+<span id="cb3-2"><a href="intro.html#cb3-2"></a>    <span class="va">console</span>.<span class="at">log</span>(<span class="st">&quot;Hello world! THis is a test log&quot;</span>)</span>
+<span id="cb3-3"><a href="intro.html#cb3-3"></a><span class="kw">&lt;/script&gt;</span></span></code></pre></div>
+<center>
+<img src="img/console-log.jpg" width="450" />
+</center>
+</div>
+</div>
+<div id="var-and-const" class="section level2">
+<h2><span class="header-section-number">1.2</span> var, and const</h2>
+<p><code>var</code>, <code>let</code>, and <code>const</code> are three ways to define variables in JavaScript. We will not go through <code>let</code> as we will not be using it for most of this tutorial. If you want to know more about <code>let</code>, you can visit <a href="https://www.w3schools.com/js/js_let.asp">here</a> to learn more.</p>
+<div id="var" class="section level3">
+<h3><span class="header-section-number">1.2.1</span> var</h3>
+<p><code>var</code> is used to declare a variable. Variables are containers for storing information.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb4-1"><a href="intro.html#cb4-1"></a><span class="kw">var</span> Name<span class="op">;</span> <span class="co">// declare Name, but it is empty for now</span></span>
+<span id="cb4-2"><a href="intro.html#cb4-2"></a>Name <span class="op">=</span> <span class="st">&quot;John&quot;</span><span class="op">;</span> <span class="co">// Now, the variable Name contains John</span></span>
+<span id="cb4-3"><a href="intro.html#cb4-3"></a></span>
+<span id="cb4-4"><a href="intro.html#cb4-4"></a><span class="kw">var</span> Name <span class="op">=</span> <span class="st">&quot;John&quot;</span><span class="op">;</span> <span class="co">// works the same way as above</span></span></code></pre></div>
+<p>You may want to create empty variables to store information later during loops.</p>
+</div>
+<div id="const" class="section level3">
+<h3><span class="header-section-number">1.2.2</span> const</h3>
+<p><code>const</code> variables cannot be reassigned once they are named.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb5-1"><a href="intro.html#cb5-1"></a><span class="kw">const</span> PI <span class="op">=</span> <span class="fl">3.141592653589793</span><span class="op">;</span></span>
+<span id="cb5-2"><a href="intro.html#cb5-2"></a>PI <span class="op">=</span> <span class="fl">3.14</span><span class="op">;</span>      <span class="co">// This will give an error</span></span>
+<span id="cb5-3"><a href="intro.html#cb5-3"></a>PI <span class="op">=</span> PI <span class="op">+</span> <span class="dv">10</span><span class="op">;</span>   <span class="co">// This will also give an error</span></span></code></pre></div>
+<p>The keyword const is a little misleading. It does NOT define a constant value. It defines a constant reference to a value. Because of this, we cannot change constant primitive values, but we can change the properties of constant objects.</p>
+<p>You can change the properties of a constant object:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb6-1"><a href="intro.html#cb6-1"></a><span class="co">// You can create a const object:</span></span>
+<span id="cb6-2"><a href="intro.html#cb6-2"></a><span class="kw">const</span> car <span class="op">=</span> <span class="op">{</span><span class="dt">type</span><span class="op">:</span><span class="st">&quot;Fiat&quot;</span><span class="op">,</span> <span class="dt">model</span><span class="op">:</span><span class="st">&quot;500&quot;</span><span class="op">,</span> <span class="dt">color</span><span class="op">:</span><span class="st">&quot;white&quot;</span><span class="op">};</span></span>
+<span id="cb6-3"><a href="intro.html#cb6-3"></a></span>
+<span id="cb6-4"><a href="intro.html#cb6-4"></a><span class="co">// You can change a property:</span></span>
+<span id="cb6-5"><a href="intro.html#cb6-5"></a><span class="va">car</span>.<span class="at">color</span> <span class="op">=</span> <span class="st">&quot;red&quot;</span><span class="op">;</span></span>
+<span id="cb6-6"><a href="intro.html#cb6-6"></a></span>
+<span id="cb6-7"><a href="intro.html#cb6-7"></a><span class="co">// You can add a property:</span></span>
+<span id="cb6-8"><a href="intro.html#cb6-8"></a><span class="va">car</span>.<span class="at">owner</span> <span class="op">=</span> <span class="st">&quot;Johnson&quot;</span><span class="op">;</span></span></code></pre></div>
+<p>But you can NOT reassign a constant object:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb7-1"><a href="intro.html#cb7-1"></a><span class="kw">const</span> car <span class="op">=</span> <span class="op">{</span><span class="dt">type</span><span class="op">:</span><span class="st">&quot;Fiat&quot;</span><span class="op">,</span> <span class="dt">model</span><span class="op">:</span><span class="st">&quot;500&quot;</span><span class="op">,</span> <span class="dt">color</span><span class="op">:</span><span class="st">&quot;white&quot;</span><span class="op">};</span></span>
+<span id="cb7-2"><a href="intro.html#cb7-2"></a>car <span class="op">=</span> <span class="op">{</span><span class="dt">type</span><span class="op">:</span><span class="st">&quot;Volvo&quot;</span><span class="op">,</span> <span class="dt">model</span><span class="op">:</span><span class="st">&quot;EX60&quot;</span><span class="op">,</span> <span class="dt">color</span><span class="op">:</span><span class="st">&quot;red&quot;</span><span class="op">};</span>    <span class="co">// ERROR</span></span></code></pre></div>
+<p>You also cannot re-declare your constants</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb8-1"><a href="intro.html#cb8-1"></a><span class="kw">const</span> x <span class="op">=</span> <span class="dv">2</span><span class="op">;</span>       <span class="co">// Allowed</span></span>
+<span id="cb8-2"><a href="intro.html#cb8-2"></a><span class="kw">const</span> x <span class="op">=</span> <span class="dv">3</span><span class="op">;</span>       <span class="co">// Not allowed</span></span>
+<span id="cb8-3"><a href="intro.html#cb8-3"></a>x <span class="op">=</span> <span class="dv">3</span><span class="op">;</span>             <span class="co">// Not allowed</span></span>
+<span id="cb8-4"><a href="intro.html#cb8-4"></a><span class="kw">var</span> x <span class="op">=</span> <span class="dv">3</span><span class="op">;</span>         <span class="co">// Not allowed</span></span>
+<span id="cb8-5"><a href="intro.html#cb8-5"></a><span class="kw">let</span> x <span class="op">=</span> <span class="dv">3</span><span class="op">;</span>         <span class="co">// Not allowed</span></span></code></pre></div>
+<p>Hence, we normally use them as constants, like trial duration, number of trials</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb9-1"><a href="intro.html#cb9-1"></a><span class="kw">const</span> TRIAL_DURATION <span class="op">=</span> <span class="dv">1000</span><span class="op">;</span> <span class="co">// 1000 ms</span></span>
+<span id="cb9-2"><a href="intro.html#cb9-2"></a><span class="kw">const</span> N_TRIALS <span class="op">=</span> <span class="dv">90</span><span class="op">;</span> <span class="co">// 90 trials</span></span></code></pre></div>
+</div>
+</div>
+<div id="comments" class="section level2">
+<h2><span class="header-section-number">1.3</span> Comments</h2>
+<p>You can comment out codes or write comments in two ways:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb10-1"><a href="intro.html#cb10-1"></a><span class="co">// this is a one line comment</span></span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb11-1"><a href="intro.html#cb11-1"></a><span class="co">/*</span></span>
+<span id="cb11-2"><a href="intro.html#cb11-2"></a><span class="co">This is a multi-line comment</span></span>
+<span id="cb11-3"><a href="intro.html#cb11-3"></a><span class="co">Hello world!</span></span>
+<span id="cb11-4"><a href="intro.html#cb11-4"></a><span class="co">You can continue to type as usual here</span></span>
+<span id="cb11-5"><a href="intro.html#cb11-5"></a><span class="co">*/</span></span></code></pre></div>
+<p>It is conventional to comment before the code section to aid others with understanding your thought process for that section of code. Everyone has a different coding style, hence comment your code!</p>
+</div>
+<div id="arrays" class="section level2">
+<h2><span class="header-section-number">1.4</span> Arrays</h2>
+<p>An array is a variable that can hold more than one value at a time. Think about it like a column or a row in your excel spreadsheet. One row/column could be a variable.
+For example, if you have three different types of cars, you can put them into an array!</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb12-1"><a href="intro.html#cb12-1"></a><span class="kw">var</span> cars <span class="op">=</span> [<span class="st">&quot;BMW&quot;</span><span class="op">,</span> <span class="st">&quot;Volvo&quot;</span><span class="op">,</span> <span class="st">&quot;Hyundai&quot;</span>]<span class="op">;</span></span></code></pre></div>
+<p>The structure of an array is like this:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb13-1"><a href="intro.html#cb13-1"></a><span class="kw">var</span> array_name <span class="op">=</span> [item1<span class="op">,</span> item2<span class="op">,</span> ...]<span class="op">;</span>    </span></code></pre></div>
+<p>Hence, an array can hold many elements or values under a single name, and you can access its element by referring to its index, <strong>starting from 0</strong>.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb14-1"><a href="intro.html#cb14-1"></a><span class="va">console</span>.<span class="at">log</span>(cars[<span class="dv">0</span>]) <span class="co">// returns BMW</span></span></code></pre></div>
+<p>You can also create an empty array by leaving the elements in the brackets blank:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb15-1"><a href="intro.html#cb15-1"></a><span class="kw">var</span> counter <span class="op">=</span> []<span class="op">;</span>    </span></code></pre></div>
+</div>
+<div id="objects" class="section level2">
+<h2><span class="header-section-number">1.5</span> Objects</h2>
+<p>A JavaScript object properties. For example, a car could be an object, and have properties such as make, model, year, weight, and color. An object is created using <code>{}</code> instead of <code>[]</code>. In the brackets, the object’s properties can be defined.</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb16-1"><a href="intro.html#cb16-1"></a><span class="kw">var</span> car <span class="op">=</span> <span class="op">{</span></span>
+<span id="cb16-2"><a href="intro.html#cb16-2"></a>  <span class="dt">make</span><span class="op">:</span> <span class="st">&quot;BMW&quot;</span><span class="op">,</span></span>
+<span id="cb16-3"><a href="intro.html#cb16-3"></a>  <span class="dt">model</span><span class="op">:</span> <span class="st">&quot;3 Series&quot;</span><span class="op">,</span></span>
+<span id="cb16-4"><a href="intro.html#cb16-4"></a>  <span class="dt">year</span><span class="op">:</span> <span class="st">&quot;2020&quot;</span><span class="op">,</span></span>
+<span id="cb16-5"><a href="intro.html#cb16-5"></a>  <span class="dt">weight</span><span class="op">:</span> <span class="st">&quot;1800kg&quot;</span><span class="op">,</span></span>
+<span id="cb16-6"><a href="intro.html#cb16-6"></a>  <span class="dt">color</span><span class="op">:</span> <span class="st">&quot;White&quot;</span></span>
+<span id="cb16-7"><a href="intro.html#cb16-7"></a><span class="op">}</span></span></code></pre></div>
+<p>Notice that each property is written as name: value pairs, where name and value is separated by a colon.</p>
+<p>You can also extract each property from the object!</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb17-1"><a href="intro.html#cb17-1"></a><span class="va">console</span>.<span class="at">log</span>(<span class="va">car</span>.<span class="at">model</span>) <span class="co">// returns &quot;3 Series&quot;</span></span>
+<span id="cb17-2"><a href="intro.html#cb17-2"></a>}</span></code></pre></div>
+</div>
+<div id="functions" class="section level2">
+<h2><span class="header-section-number">1.6</span> Functions</h2>
+<p>A function is a set of code that is written as a block to perform a particular task. You can execute a function by calling it. So far, we have used the console.log() function, which logs the output in to the console.</p>
+<p>The general structure of a function is defined by the <code>function</code> keyword, followed by a <strong>user-defined name</strong>, and then parenthesis <strong>()</strong>. The code that you want the function to execute are placed inside the curly brackets <strong>{}</strong>. This is how it looks like:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb18-1"><a href="intro.html#cb18-1"></a><span class="kw">function</span> <span class="at">name</span>(parameter1<span class="op">,</span> parameter2<span class="op">,</span> parameter3) <span class="op">{</span></span>
+<span id="cb18-2"><a href="intro.html#cb18-2"></a>  <span class="co">// code to be executed</span></span>
+<span id="cb18-3"><a href="intro.html#cb18-3"></a><span class="op">}</span></span></code></pre></div>
+<p>Functions stop executing when it reaches a <code>return</code> statement where it will return the value in that <code>return</code> statement:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb19-1"><a href="intro.html#cb19-1"></a><span class="kw">function</span> <span class="at">myaddition</span>(v1<span class="op">,</span> v2<span class="op">,</span> v3) <span class="op">{</span></span>
+<span id="cb19-2"><a href="intro.html#cb19-2"></a>  <span class="kw">var</span> v_add <span class="op">=</span> v1 <span class="op">+</span> v2 <span class="op">+</span> v3 <span class="co">// code to be executed</span></span>
+<span id="cb19-3"><a href="intro.html#cb19-3"></a>  <span class="cf">return</span> v_add <span class="co">// returns v_add when the function is executed outside here</span></span>
+<span id="cb19-4"><a href="intro.html#cb19-4"></a><span class="op">}</span></span>
+<span id="cb19-5"><a href="intro.html#cb19-5"></a></span>
+<span id="cb19-6"><a href="intro.html#cb19-6"></a><span class="va">console</span>.<span class="at">log</span>(<span class="at">myaddition</span>(<span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span>)) <span class="co">// returns 6</span></span></code></pre></div>
+<p>Furthermore, functions often compute a <strong>return value</strong> which you want to compute at the end of the function.</p>
+<p>People create functions to reuse code and execute them without having to write the same lines of code over again. The only difference for these repeats are the arguments for the functions.</p>
+</div>
+<div id="booleans-and-comparisons" class="section level2">
+<h2><span class="header-section-number">1.7</span> Booleans and comparisons</h2>
+<p>Booleans represent one of two values: <strong>true</strong> or <strong>false</strong></p>
+<div class="l-body-outset">
+<table>
+<thead>
+<tr class="header">
+<th>Operator</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>&amp;&amp;</code></td>
+<td>and</td>
+</tr>
+<tr class="even">
+<td><code>||</code></td>
+<td>or</td>
+</tr>
+<tr class="odd">
+<td><code>!</code></td>
+<td>not</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb20-1"><a href="intro.html#cb20-1"></a><span class="kw">var</span> x <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
+<span id="cb20-2"><a href="intro.html#cb20-2"></a><span class="kw">var</span> y <span class="op">=</span> <span class="dv">8</span></span>
+<span id="cb20-3"><a href="intro.html#cb20-3"></a></span>
+<span id="cb20-4"><a href="intro.html#cb20-4"></a><span class="va">console</span>.<span class="at">log</span>(x <span class="op">&gt;</span> <span class="dv">3</span> <span class="op">&amp;&amp;</span> y <span class="op">&gt;</span> <span class="dv">5</span>) <span class="co">// returns true</span></span>
+<span id="cb20-5"><a href="intro.html#cb20-5"></a><span class="va">console</span>.<span class="at">log</span>(x <span class="op">&gt;</span> <span class="dv">8</span> <span class="op">||</span> y <span class="op">&gt;</span> <span class="dv">6</span>) <span class="co">// returns true</span></span>
+<span id="cb20-6"><a href="intro.html#cb20-6"></a><span class="va">console</span>.<span class="at">log</span>(<span class="op">!</span>(x <span class="op">&gt;</span> <span class="dv">8</span> <span class="op">||</span> y <span class="op">&gt;</span> <span class="dv">6</span>)) <span class="co">// returns false</span></span></code></pre></div>
+<p>Comparisons, on the other hand, are used in logical statements to determine equality or difference between variables ot values. If the statement is true, then the logical statements returns <code>true</code>, if not, it returns <code>false</code>.</p>
+<div class="l-body-outset">
+<table>
+<thead>
+<tr class="header">
+<th>Operator</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>==</code></td>
+<td>equal to</td>
+</tr>
+<tr class="even">
+<td><code>===</code></td>
+<td>equal value and equal type</td>
+</tr>
+<tr class="odd">
+<td><code>!=</code></td>
+<td>not equal to</td>
+</tr>
+<tr class="even">
+<td><code>!==</code></td>
+<td>not equal value or not equal type</td>
+</tr>
+<tr class="odd">
+<td><code>&gt;</code></td>
+<td>more than</td>
+</tr>
+<tr class="even">
+<td><code>&lt;</code></td>
+<td>less than</td>
+</tr>
+<tr class="odd">
+<td><code>&gt;=</code></td>
+<td>more than or equal to</td>
+</tr>
+<tr class="even">
+<td><code>&lt;=</code></td>
+<td>less than or equal to</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb21-1"><a href="intro.html#cb21-1"></a><span class="kw">var</span> x <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
+<span id="cb21-2"><a href="intro.html#cb21-2"></a></span>
+<span id="cb21-3"><a href="intro.html#cb21-3"></a><span class="va">console</span>.<span class="at">log</span>(x <span class="op">==</span> <span class="dv">5</span>) <span class="co">// returns true</span></span>
+<span id="cb21-4"><a href="intro.html#cb21-4"></a><span class="va">console</span>.<span class="at">log</span>(x <span class="op">==</span> <span class="st">&#39;5&#39;</span>) <span class="co">// returns true</span></span>
+<span id="cb21-5"><a href="intro.html#cb21-5"></a><span class="va">console</span>.<span class="at">log</span>(x <span class="op">===</span> <span class="st">&#39;5&#39;</span>) <span class="co">// returns false</span></span>
+<span id="cb21-6"><a href="intro.html#cb21-6"></a><span class="va">console</span>.<span class="at">log</span>(x <span class="op">&gt;</span> <span class="dv">8</span>) <span class="co">// returns false</span></span>
+<span id="cb21-7"><a href="intro.html#cb21-7"></a><span class="va">console</span>.<span class="at">log</span>(x <span class="op">&lt;</span> <span class="dv">8</span>) <span class="co">// returns true</span></span></code></pre></div>
+<p>Here are some examples of comparison operators. You can check out this <a href="https://www.w3schools.com/js/js_comparisons.asp">site</a> for more details</p>
+</div>
+<div id="conditional-statements" class="section level2">
+<h2><span class="header-section-number">1.8</span> Conditional statements</h2>
+<p>One reason to use comparisons and booleans is when you need to perform different actions based on certain conditions. For example, if the value of your object x is greater than a threshold, you might want your code to perform a set of lines. On the other hand, if the value is not greater (i.e., lesser) than the threshold, you might want your code to perform another set of lines.</p>
+<p>In short, conditional statements are anchor points in decision making in your script. There are different conditional statements based on the type of anchor points.</p>
+<div id="if-else-else-if" class="section level3">
+<h3><span class="header-section-number">1.8.1</span> If, else, else if</h3>
+<p><code>if</code>, <code>else</code>, and <code>else if</code> are variants of the <code>if</code> statement</p>
+<ul>
+<li>Use <code>if</code> to specify a block of code to run only if the condition is true.</li>
+<li>Use <code>else</code> after if to specify a block of code to run if the condition in the if statemtent is false.</li>
+<li>Use <code>else if</code> to specify a new condition between <code>if</code> and <code>else</code>, much like comma.</li>
+</ul>
+<p>A schematic could look like this:</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb22-1"><a href="intro.html#cb22-1"></a><span class="cf">if</span> (condition1) <span class="op">{</span></span>
+<span id="cb22-2"><a href="intro.html#cb22-2"></a>    <span class="co">//  block of code to be executed if the condition1 is true</span></span>
+<span id="cb22-3"><a href="intro.html#cb22-3"></a><span class="op">}</span> <span class="cf">else</span> <span class="cf">if</span> (condition2) <span class="op">{</span></span>
+<span id="cb22-4"><a href="intro.html#cb22-4"></a>    <span class="co">//  block of code to be executed if the condition2 is true</span></span>
+<span id="cb22-5"><a href="intro.html#cb22-5"></a><span class="op">}</span> <span class="cf">else</span> <span class="op">{</span></span>
+<span id="cb22-6"><a href="intro.html#cb22-6"></a>    <span class="co">//  block of code to be executed if the neither conditions are true</span></span>
+<span id="cb22-7"><a href="intro.html#cb22-7"></a><span class="op">}</span></span></code></pre></div>
+<p>In an example, let’s say my variable is <code>x = 5</code>. My first condition is whether x is &lt; 4 (condition A). If it is, the output will be <code>x is &lt; 4</code>. If not, I will it through condition 2: is x &gt; 8? If it is, then the output will be <code>x is &gt; 8</code>. If neither conditions are true, then the output will be <code>x is in between 4 and 8</code>.</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb23-1"><a href="intro.html#cb23-1"></a><span class="kw">var</span> x <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
+<span id="cb23-2"><a href="intro.html#cb23-2"></a><span class="cf">if</span> (x <span class="op">&lt;</span> <span class="dv">4</span>) <span class="op">{</span></span>
+<span id="cb23-3"><a href="intro.html#cb23-3"></a>    <span class="va">console</span>.<span class="at">log</span>(<span class="st">&#39;x is &lt; 4&#39;</span>)<span class="op">;</span></span>
+<span id="cb23-4"><a href="intro.html#cb23-4"></a><span class="op">}</span> <span class="cf">else</span> <span class="cf">if</span> (x <span class="op">&gt;</span> <span class="dv">8</span>) <span class="op">{</span></span>
+<span id="cb23-5"><a href="intro.html#cb23-5"></a>    <span class="va">console</span>.<span class="at">log</span>(<span class="st">&#39;x is &gt; 8&#39;</span>)<span class="op">;</span></span>
+<span id="cb23-6"><a href="intro.html#cb23-6"></a><span class="op">}</span> <span class="cf">else</span> <span class="op">{</span></span>
+<span id="cb23-7"><a href="intro.html#cb23-7"></a>    <span class="va">console</span>.<span class="at">log</span>(<span class="st">&#39;x is in between 4 and 8&#39;</span>)<span class="op">;</span></span>
+<span id="cb23-8"><a href="intro.html#cb23-8"></a><span class="op">}</span></span></code></pre></div>
+</div>
+<div id="switch" class="section level3">
+<h3><span class="header-section-number">1.8.2</span> Switch</h3>
+<p>Switch is similar to the <code>if</code>, <code>else</code>, and <code>else if</code> statement, but the difference is in switching between discrete cases.</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb24-1"><a href="intro.html#cb24-1"></a><span class="cf">switch</span>(expression) <span class="op">{</span></span>
+<span id="cb24-2"><a href="intro.html#cb24-2"></a>  <span class="cf">case</span> <span class="dt">x</span><span class="op">:</span></span>
+<span id="cb24-3"><a href="intro.html#cb24-3"></a>    <span class="co">// code block</span></span>
+<span id="cb24-4"><a href="intro.html#cb24-4"></a>    <span class="cf">break</span><span class="op">;</span></span>
+<span id="cb24-5"><a href="intro.html#cb24-5"></a>  <span class="cf">case</span> <span class="dt">y</span><span class="op">:</span></span>
+<span id="cb24-6"><a href="intro.html#cb24-6"></a>    <span class="co">// code block</span></span>
+<span id="cb24-7"><a href="intro.html#cb24-7"></a>    <span class="cf">break</span><span class="op">;</span></span>
+<span id="cb24-8"><a href="intro.html#cb24-8"></a>  <span class="cf">default</span><span class="op">:</span></span>
+<span id="cb24-9"><a href="intro.html#cb24-9"></a>    <span class="co">// code block</span></span>
+<span id="cb24-10"><a href="intro.html#cb24-10"></a><span class="op">}</span></span></code></pre></div>
+<p>If there is a match between the expression and case, the corresponding code block will be executed. If there is no match, then the default code block will be executed. The <code>break</code> keyword is used to break out of the loop once that line is executed so you will not be stuck in an infinite loop inside the code block for the case.</p>
+<p>Below is an example of using switch and case:</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb25-1"><a href="intro.html#cb25-1"></a><span class="kw">var</span> x <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb25-2"><a href="intro.html#cb25-2"></a></span>
+<span id="cb25-3"><a href="intro.html#cb25-3"></a><span class="cf">switch</span> (x) <span class="op">{</span></span>
+<span id="cb25-4"><a href="intro.html#cb25-4"></a>  <span class="cf">case</span> <span class="dv">0</span><span class="op">:</span></span>
+<span id="cb25-5"><a href="intro.html#cb25-5"></a>    text <span class="op">=</span> <span class="st">&quot;This is the numeric zero&quot;</span><span class="op">;</span></span>
+<span id="cb25-6"><a href="intro.html#cb25-6"></a>    <span class="cf">break</span><span class="op">;</span></span>
+<span id="cb25-7"><a href="intro.html#cb25-7"></a>  <span class="cf">case</span> <span class="dv">1</span><span class="op">:</span></span>
+<span id="cb25-8"><a href="intro.html#cb25-8"></a>    text <span class="op">=</span> <span class="st">&quot;This is the numeric one&quot;</span><span class="op">;</span></span>
+<span id="cb25-9"><a href="intro.html#cb25-9"></a>    <span class="cf">break</span><span class="op">;</span></span>
+<span id="cb25-10"><a href="intro.html#cb25-10"></a>  <span class="cf">default</span><span class="op">:</span></span>
+<span id="cb25-11"><a href="intro.html#cb25-11"></a>    text <span class="op">=</span> <span class="st">&quot;Any other number or character &#39;0&#39; or &#39;1&#39; &quot;</span><span class="op">;</span></span>
+<span id="cb25-12"><a href="intro.html#cb25-12"></a><span class="op">}</span></span>
+<span id="cb25-13"><a href="intro.html#cb25-13"></a></span>
+<span id="cb25-14"><a href="intro.html#cb25-14"></a><span class="va">console</span>.<span class="at">log</span>(text)</span></code></pre></div>
+</div>
+</div>
+<div id="conclusion" class="section level2">
+<h2><span class="header-section-number">1.9</span> Conclusion</h2>
+<p>This is only an introduction to some of the basic javascript you will need in order to start tinkering with jsPsych. If you wish to learn more about JavaScript in greater detail, click <a href="https://www.w3schools.com/js">here</a>! There are tons of examples you can follow through and play around to get the hang of it. This page is also developed based on some of the examples from the link above.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="the-jspsych-plugins.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["Learning jsPsych together.pdf", "Learning jsPsych together.epub"],
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

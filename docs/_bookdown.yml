@@ -1,4 +1,5 @@
 book_filename: "Learning jsPsych together"
+output_dir: ""
 delete_merged_file: true
 language:
   ui:

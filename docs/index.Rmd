@@ -1,0 +1,27 @@
+--- 
+title: "jsPsych Tutorial"
+author: "Winson Yang"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+description: "This is a tutorial on creating web experiments using the jsPsych library for JavaScript."
+---
+
+# About this tutorial {-}
+
+This is a tutorial that aims to accompany the [YouTube video tutorial series](https://www.youtube.com/playlist?list=PLtdKTIOUlb42qG962wz30fzlUMibJCGQW) on creating behavioral experiments using jsPsych
+
+## About jsPsych {-}
+
+
+<center><img src="img/jspsych-logo.jpg" width="450" /></center>
+
+[jsPsych](https://www.jspsych.org) is a JavaScript library for running behavioral experiments in a web browser. The library provides a flexible framework for building a wide range of laboratory-like experiments that can be run online. In short, you provide the description of the experiment in the form of a timeline for parts of the experiment. For example, you can create javascript objects to serve pages like instructions, which trials to run next, debrief screen, and so on. jsPsych also allows you to store your data locally in your computer or in a server or database. In short, jsPsych uses plugins to define what to do at each point on the timeline. These plugins are ready-made templates that are flexible to support a wide varierty of experimental tasks, such as like displaying instructions or displaying a stimulus and collecting a keyboard response. You can also create your own plugin if you have experience with JavaScript programming.
+
+## Structure of this book {-}
+
+This book is structured in the same way as you would design an experiment: From the skeleton of the experiment to the embellishments. This tutorial will start with some basic javascript programming to get everyone on the same page on minimal javascript required for creating jsPsych experiments and debugging. Then we will create the skeleton of an experiment: the welcome screen, to instructions, practice trials, experimental trials, and debrief. Then, we will proceed with adding details to the experiment, and finally deploying the application on the web.
+
